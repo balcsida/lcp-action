@@ -1,0 +1,12 @@
+# action.yml
+name: 'LCP Build'
+description: 'Build everything then upload as a build to DXP Cloud'
+inputs:
+  project:  # id of input
+    description: 'DXP Cloud Project ID'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.project }}
